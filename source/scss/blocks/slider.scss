@@ -13,6 +13,18 @@
   }
 }
 
+@keyframes slider__item-animation {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .slider__item {
   display: flex;
   flex-direction: column;
@@ -61,6 +73,12 @@
       @media (max-width: $mobile) and (orientation: landscape) {
         margin-top: auto;
       }
+    }
+  }
+
+  @media (min-width: $mobile) {
+    &.swiper-slide-active, &.swiper-slide-next {
+      animation: slider__item-animation 400ms ease-in;
     }
   }
 }
