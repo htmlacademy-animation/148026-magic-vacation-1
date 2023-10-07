@@ -28,6 +28,10 @@
 
 .page-header__logo {
   @include hover;
+  animation-name: page-header__logo-animation;
+  animation-duration: 400ms;
+  animation-delay: 100ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   position: relative;
   flex: none;
   top: -0.5rem;
@@ -171,6 +175,10 @@
 }
 
 .page-header__menu {
+  animation-name: page-header__menu-animation;
+  animation-duration: 400ms;
+  animation-delay: 150ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   font-family: $font-alt;
   text-transform: uppercase;
   font-weight: 400;
@@ -288,6 +296,10 @@
 }
 
 .page-header__social {
+  animation-name: page-header__social-animation;
+  animation-duration: 400ms;
+  animation-delay: 200ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   margin-left: 4.8rem;
 
   @media (min-width: $stop-scaling) {
@@ -302,5 +314,37 @@
   @media (max-width: $mobile) and (orientation: landscape) {
     margin-left: 0;
     width: 100%;
+  }
+}
+
+@keyframes page-header__logo-animation {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes page-header__menu-animation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-header__social-animation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
