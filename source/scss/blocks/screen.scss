@@ -200,6 +200,9 @@
 }
 
 .screen__footer-note {
+  animation-name: screen__footer-note_animation;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   padding: 0.8rem 0;
   text-transform: uppercase;
   text-align: center;
@@ -353,4 +356,18 @@
 
 .screen--rules {
   background-color: $c-dark;
+}
+
+@keyframes screen__footer-note_animation {
+  from {
+    opacity: 0;
+    margin-bottom: -100%;
+    //transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    margin-bottom: 0;
+    //transform: translateY(0);
+  }
 }
